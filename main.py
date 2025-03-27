@@ -16,12 +16,12 @@ def main():
     print('============ BOOKBOT ============')
     print(f"Analyzing book found at {path}")
     print('----------- Word Count ----------')
-    print(f'{word_count} words found in the document')
+    print(f'Found {word_count} total words')
     print('--------- Character Count -------')
     character_count = count_characters(text)
     sorted_characters = sort_characters(character_count)
     for item in sorted_characters:
-        print(item["char"], item["count"])
+        print(f"{item['char']}: {item['count']}")
     print('============= END ===============')
 
 
