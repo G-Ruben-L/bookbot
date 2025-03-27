@@ -13,3 +13,20 @@ def count_characters(text):
                         character_count[char] += 1
 
         return character_count
+
+def sort_on(dict):
+    return dict["count"]
+
+
+def sort_characters(character_count):
+        list_of_dicts = []
+        for key in character_count:
+                list_of_dicts.append({"char":key, "count": character_count[key]})
+        list_of_dicts.sort(reverse=True, key=sort_on)
+
+        return list_of_dicts
+
+
+# # sorting character count
+# def sort_characters(character_count):
+#         return list(sorted(character_count.items(), key=lambda x: x[1], reverse=True))
