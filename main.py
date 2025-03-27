@@ -14,7 +14,7 @@ def main():
     print(f'{word_count} words found in the document')
     character_count = count_characters(text)
     for char, count in character_count.items():
-        print(f'{char}: {count}')
+        print(f"'{char}': {count}")
 
 
 main()
