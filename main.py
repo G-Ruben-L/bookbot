@@ -1,3 +1,5 @@
+import sys
+
 from stats import count_words
 from stats import count_characters
 from stats import sort_characters
@@ -10,8 +12,12 @@ def open_text(file_path):
 
 # call and print word count and counts per character
 def main():
-    path = 'books/frankenstein.txt'
-    text = open_text('books/frankenstein.txt')
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    path = sys.argv[1]
+    text = open_text(path)
     word_count = count_words(text)
     print('============ BOOKBOT ============')
     print(f"Analyzing book found at {path}")
